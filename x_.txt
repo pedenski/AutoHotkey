@@ -1,0 +1,35 @@
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #Warn  ; Enable warnings to assist with detecting common errors.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+
+
+;run powershell
+F8::
+Run, PowerShell.exe
+return
+
+;hide windows
+F7::
+Send, #d
+Return
+
+;switch desktop right
+F6::
+Send, {LWin down}{RControl down}{Right}{LWin up}{Rcontrol up}
+return
+
+;switch desktop left
+F5::
+Send, {LWin down}{RControl down}{Left}{LWin up}{Rcontrol up}
+return
+
+
+;lock windows
+F9:: 
+DllCall("user32.dll\LockWorkStation")
+return
+
+;Run notepad
+;WinWaitActive Untitled - Notepad
+;Send SUS
